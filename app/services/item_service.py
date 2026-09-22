@@ -87,7 +87,7 @@ def patch_item(item_id: int, payload: ItemPatch, current_user: CurrentUser) -> I
     row = _get_row_or_raise(item_id)
     _ensure_owner_or_admin(row, current_user)
 
-    updates = payload.dict(exclude_unset=True)
+    updates = payload.model_dump(exclude_unset=True)
     new_name = updates.get("name", row["name"])
     new_description = updates.get("description", row["description"])
     new_price = updates.get("price", row["price"])

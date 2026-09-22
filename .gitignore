@@ -210,3 +210,6 @@ __marimo__/
 .idea/**
 .DS_Store
 
+
+# SQLite database files generated at runtime
+*.db
